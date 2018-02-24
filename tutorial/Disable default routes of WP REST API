@@ -1,12 +1,8 @@
-~~~php
-<?php 
 add_filter('rest_endpoints', function( $endpoints ) {
-
     foreach( $endpoints as $route => $endpoint ){
         if( false !== stripos( $route, '/wp/' ) ){
             unset( $endpoints[ $route ] );
         }
     }
-
     return $endpoints;
 });
