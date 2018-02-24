@@ -1,0 +1,24 @@
+// add meta post address
+add_action( 'rest_api_init', 'register_rest_field_for_custom_post_meta' );
+function register_rest_field_for_custom_post_meta() {
+    register_rest_field( 'exhibition',
+        'address',
+        array(
+            'get_callback'    => 'veas_get_post_meta',
+            'update_callback' => 'veas_update_post_meta',
+            'schema' => null
+        )
+    );
+}
+
+function veas_update_post_meta( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+    return update_post_meta( $object->ID, $field_name, $value );
+}
+
+// get meta post api call
+function veas_get_post_meta( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name, true );
+}
