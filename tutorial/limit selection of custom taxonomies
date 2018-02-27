@@ -1,0 +1,16 @@
+<?php add_action( 'admin_head', 'categories_sel' ); 
+function categories_sel() {    ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	jQuery("input[name=\"tax_input[categories][]\"]").click(function () {
+		selected = jQuery("input[name=\"tax_input[categories][]\"]").filter(":checked").length;
+		if (selected > 1){
+			jQuery("input[name=\"tax_input[categories][]\"]").each(function () {
+				Query(this).attr("checked", false);
+			});
+			jQuery(this).attr("checked", true);
+		}
+	});
+});
+</script>
+<?php } ?>
