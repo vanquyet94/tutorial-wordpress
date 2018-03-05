@@ -1,0 +1,13 @@
+//Theme Structure basic
+header.php ...................... Header Section
+index.php ......................... Main Section
+sidebar.php .................... Sidebar Section
+single.php ....................... Post Template
+page.php ......................... Page Template
+comments.php .................. Comment Template
+search.php ...................... Search Content
+searchform.php ............ Search Form Template
+archive.php ................... Archive Template
+functions.php ................ Special Functions
+404.php .................... Error Page template
+style.css .......................... Style Sheet
